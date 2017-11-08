@@ -53,14 +53,29 @@ def getHtmlContent(url):
 
 
 # urllib2
+# request = urllib2.Request(oUrl)
+# response = urllib2.urlopen(request)
+#
+# with open("picture.jpg", "wb") as f:
+#     f.write(response.read())
+# print response.geturl()
+# print response.info()  # 返回报文头信息
+# print urllib2.urlopen(oUrl).read()
 
-# 设置消息头
 
-request = urllib2.Request(oUrl)
-response = urllib2.urlopen(request)
+from bs4 import BeautifulSoup
 
-with open("picture.jpg", "wb") as f:
-    f.write(response.read())
-print response.geturl()
-print response.info()  # 返回报文头信息
-print urllib2.urlopen(oUrl).read()
+html = urllib.urlopen(oUrl)
+htmlContent = html.read()
+soup = BeautifulSoup(htmlContent)
+
+print soup.prettify()
+# print soup.title
+# print soup.p
+# print soup.div
+# print soup.img
+# print soup.p.string
+
+# print soup.img.attr
+# print soup.select('.btn-2code')
+
