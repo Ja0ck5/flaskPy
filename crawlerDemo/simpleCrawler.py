@@ -4,6 +4,8 @@ import urllib2
 import re
 
 oUrl = "https://www.douyu.com/"
+
+
 # html = urllib.urlopen(oUrl)
 # content = html.read()
 # # print 'src',content.find('src')
@@ -24,26 +26,41 @@ oUrl = "https://www.douyu.com/"
 
 
 def getImg(htmlContent):
-    imgList = re.findall(r'data-original="(.*?\.(jpg|png))"',htmlContent)
+    imgList = re.findall(r'data-original="(.*?\.(jpg|png))"', htmlContent)
     x = 0
     for imgUrl in imgList:
         imgUrlReal = imgUrl[0]
         if imgUrlReal.endswith('jpg'):
-            urllib.urlretrieve(imgUrlReal,'D:/temp/%d.jpg'%x)
-            print '完成下载 %s,本地地址: D:/temp/%d.jpg'%(imgUrlReal,x)
+            urllib.urlretrieve(imgUrlReal, 'D:/temp/%d.jpg' % x)
+            print '完成下载 %s,本地地址: D:/temp/%d.jpg' % (imgUrlReal, x)
         else:
-            urllib.urlretrieve(imgUrlReal,'D:/temp/%d.png'%x)
-            print '完成下载 %s,本地地址: D:/temp/%d.png'%(imgUrlReal,x)
+            urllib.urlretrieve(imgUrlReal, 'D:/temp/%d.png' % x)
+            print '完成下载 %s,本地地址: D:/temp/%d.png' % (imgUrlReal, x)
 
-        x+=1
+        x += 1
+
 
 def getHtmlContent(url):
     page = urllib.urlopen(url)
     return page.read()
 
 
-htmlContent = getHtmlContent(oUrl)
-getImg(htmlContent)
+# htmlContent = getHtmlContent(oUrl)
+# getImg(htmlContent)
+#
+#
+# urllib.urlretrieve('https://staticlive.douyucdn.cn/upload/signs/201710231811548748.jpg','D:/temp/broken.jpg')
 
 
-urllib.urlretrieve('https://staticlive.douyucdn.cn/upload/signs/201710231811548748.jpg','D:/temp/broken.jpg')
+# urllib2
+
+# 设置消息头
+
+request = urllib2.Request(oUrl)
+response = urllib2.urlopen(request)
+
+with open("picture.jpg", "wb") as f:
+    f.write(response.read())
+print response.geturl()
+print response.info()  # 返回报文头信息
+print urllib2.urlopen(oUrl).read()
