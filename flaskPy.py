@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask,request
 
 app = Flask(__name__)
 
@@ -10,6 +10,7 @@ def hello_world(user):
     # astr = '1'
     # result =  aint + astr
     # return 'Hello World!'
+    print request.headers
     return 'Hello %s' % user
 
 
