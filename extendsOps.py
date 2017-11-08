@@ -1,40 +1,39 @@
-#coding=utf-8
+# coding=utf-8
 class Cat:
+    color = 'black'
 
-	color = 'black'
+    legs = 4
 
-	legs = 4
+    weight = 6
 
-	weight = 6
+    def __init__(self):
+        print '------- parent cat ----------'
 
-	def __init__(self):
-		print '------- parent cat ----------'
+    def __del__(self):
+        print '========= parent cat =========='
 
-	def __del__(self):
-		print '========= parent cat =========='
+    def say(self):
+        print 'mew mew~'
 
-	def say(self):
-		print 'mew mew~'
-
-	def catch(self):
-		print 'catch mouse'	
-
+    def catch(self):
+        print 'catch mouse'
 
 
 class Bosi(Cat):
+    def __init__(self):
+        Cat.__init__(self)
+        print '------- child bosi ----------'
 
-	def __init__(self):
-		Cat.__init__(self)
-		print '------- child bosi ----------'
-	def __del__(self):
-		print '========= child bosi =========='	
+    def __del__(self):
+        print '========= child bosi =========='
 
-	def bosiRun(self):
-		print 'I am a bosi cat.I am running...'
+    def bosiRun(self):
+        print 'I am a bosi cat.I am running...'
 
-class BastardCat(Cat,Bosi):
-	def bastardCatSay(self):
-		print 'u bastard.'		
+
+class BastardCat(Cat, Bosi):
+    def bastardCatSay(self):
+        print 'u bastard.'
 
 
 # ------- child bosi ----------

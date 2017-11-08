@@ -1,4 +1,4 @@
-#coding=utf-8
+# coding=utf-8
 import os
 
 # f = open('D:/f.txt','w')
@@ -79,23 +79,23 @@ fileName = 'D:/f.txt'
 
 
 try:
-	print(num)
+    print(num)
 # except Exception as e:
-	# raise
-	# print("this is an exception",e)
+# raise
+# print("this is an exception",e)
 # except NameError as ne:
 # 	print('this is a nameError',ne)
 # except IOError as ie:		
 # 	print('this is an IOError',ie)
 # except (NameError,IOError) as e :
 # 	print('this is an error',e)
-except (NameError,IOError) , result :
-	print('this is an error',result)
+except (NameError, IOError), result:
+    print('this is an error', result)
 else:
-	pass
+    pass
 finally:
-	# pass
-	print('I am the finally')
+    # pass
+    print('I am the finally')
 
 import testImport
 

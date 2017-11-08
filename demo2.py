@@ -1,4 +1,4 @@
-#coding=utf-8
+# coding=utf-8
 # a = 100
 # b=200
 # result = a + b
@@ -61,7 +61,7 @@
 # 			print("now break")
 # 			break
 # 		j+=1
-							
+
 
 # for i in range(10):
 # 	print("-"*20)
@@ -131,17 +131,18 @@ mystr = "hello world this is a python script"
 # for j in tuple1 :
 # 	print("j=%s"%j) 
 
-info = {"name" : "hello","addr":"American","age":20}
+info = {"name": "hello", "addr": "American", "age": 20}
 
-print("%s"%info['name'])
+print("%s" % info['name'])
 
 info['name'] = "world"
 
-print("%s"%info['name'])
+print("%s" % info['name'])
 
 info['gender'] = 'male'
 
-print("%s"%info['gender'])
+print("%s" % info['gender'])
+
 
 # del info['gender']
 
@@ -178,51 +179,56 @@ print("%s"%info['gender'])
 # for i in tup3 : 
 # 	print("%s"%i)
 
-def add(a,b):
-
-	c = a+b
-	print("%d+%d=%d"%(a,b,c))
-
-add(100,300)	
+def add(a, b):
+    c = a + b
+    print("%d+%d=%d" % (a, b, c))
 
 
-def getNum(a,b):
-	return a -b
+add(100, 300)
 
-print("%d"%getNum(100,200))
-	
+
+def getNum(a, b):
+    return a - b
+
+
+print("%d" % getNum(100, 200))
+
+
 def getMultiple(*num):
-	for t in num:
-		print(t)
+    for t in num:
+        print(t)
 
-getMultiple(1,5,9)
 
-age=20
+getMultiple(1, 5, 9)
+
+age = 20
+
 
 def getAge():
-		global age
-		age=18
-		print("%d"%age)
+    global age
+    age = 18
+    print("%d" % age)
+
 
 getAge()
 
-print("%d"%age)
+print("%d" % age)
 
 # 匿名函数 anonymous function
-lam = lambda a,b : a+b 
+lam = lambda a, b: a + b
 
-print("%d"%lam(11,33))
+print("%d" % lam(11, 33))
 
-lam1 = lambda a,b : a*b 
-print("%f"%lam(11,3.14))
-print("%0.1f"%lam(11,3.14))
-print("%0.2f"%lam(11,3.14))
-print("%0.3f"%lam(11,3.14))
+lam1 = lambda a, b: a * b
+print("%f" % lam(11, 3.14))
+print("%0.1f" % lam(11, 3.14))
+print("%0.2f" % lam(11, 3.14))
+print("%0.3f" % lam(11, 3.14))
 
-print((lambda a : a+ 100)(5))
+print((lambda a: a + 100)(5))
 
 print(~9)
 c = int("   100")
-print("%d"%c)
-c = int("   100",8)
-print("%d"%c)
+print("%d" % c)
+c = int("   100", 8)
+print("%d" % c)
