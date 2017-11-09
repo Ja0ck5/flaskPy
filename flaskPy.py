@@ -2,7 +2,7 @@ import base64
 import random
 import time
 
-from flask import Flask, request
+from flask import Flask, request, redirect
 
 app = Flask(__name__)
 
@@ -55,6 +55,14 @@ def test():
     else:
         return 'error'
 
+@app.route('/client/login', methods=['POST', 'GET'])
+def client_login():
+   uri = 'http://127.0.0.1:5000/oauth'
+   return redirect(uri)
+
+@app.route('/oauth', methods=['POST', 'GET'])
+def oauth():
+   return 'test oauth'
 
 if __name__ == '__main__':
     app.run(debug=True)
